@@ -60,7 +60,17 @@ function Home(){
         <section className="mb-12">
           <h3 className="text-xl font-bold text-[#0F172A] mb-5"> Navegação Rápida</h3>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
-              <a href="./Estudos" className="bg-white p-6 rounded-2xl 
+              <a href="/desenvolvedor" className="bg-[#CFD] p-6 rounded-2xl no-underline shadow-sm border border-[#E2E8F0] flex items-start gap-4 box-border hover:border-[#2563EB] transition-colors">
+              <div className="bg-[#EFF6FF] text-[#2563EB] w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0">
+                ⚡
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-[#1E293B] mb-1 mt-0">Desenvolvedor</h4>
+                <p className="text-[13px] text-[#64748B] m-0">Informações sobre o desenvolvedor</p>
+              </div>
+            </a>
+              
+              <a href="/estudos" className="bg-white p-6 rounded-2xl 
               no-underline shadow-sm border border-[#E2E8F0] 
               flex items-start gap-4 box-border hover:border-[#2563EB] 
               transition-colors">
