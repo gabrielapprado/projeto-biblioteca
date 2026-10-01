@@ -1,9 +1,9 @@
-
 type Aula={
     id:number;
     numero:string;
     titulo:string;
     descricao:string;
+    caminho?:string;
 }
 
 const aulas: Aula[] = [
@@ -11,32 +11,37 @@ const aulas: Aula[] = [
     id:1,
     numero:"01",
     titulo:"Fundamentos do React",
-    descricao:"Esta aula apresenta os conceitos básicos do React"
+    descricao:"Esta aula apresenta os conceitos básicos do React",
+    caminho:"/aula/fundamentos"
     },
     
     {
     id:2,
     numero:"02",
     titulo:"Componente e JSX",
-    descricao:"Aprenda a criar componentes em React e usar JSX"
+    descricao:"Aprenda a criar componentes em React e usar JSX",
+    caminho:"/aula/componentes"
     },
     {
     id:3,
     numero:"03",
     titulo:"Estados e Props",
-    descricao:"Aprenda a gerenciar estados e props em componentes do React"
+    descricao:"Aprenda a gerenciar estados e props em componentes do React",
+    caminho:"/aula/estados-props"
     },
     {
     id:4,
     numero:"04",
     titulo:"Renderização Condicional",
-    descricao:"Esta aula ensina como realizar renderização condicional em React"
+    descricao:"Esta aula ensina como realizar renderização condicional em React",
+    caminho:"/aula/renderizacao-condicional"
     },
     {
     id:5,
     numero:"05",
     titulo:"Listas e Keys",
-    descricao:"Esta aula ensina listas e keys no React"
+    descricao:"Esta aula ensina listas e keys no React",
+    caminho:"/aula/listas-keys"
     },
     {
     id:6,
@@ -76,75 +81,39 @@ type AulaItemProps={
 }
 
 function AulaItem({ aula }: AulaItemProps) {
-    return (
-    <article
-      className="
-        flex
-        items-center
-        w-full
-        p-4
-        bg-white
-        rounded-xl
-        shadow-sm
-        transition
-        duration-200
-        hover:-translate-y-0.5
-        hover:shadow-md
-      "
-    >
-
-    <div
+  return (
+    <a
+        href={aula.caminho ?? "/aulas"}
         className="
           flex
           items-center
-          justify-center
-          w-12
-          h-12
-          min-w-12
-          rounded-full
-          bg-blue-600
-          mr-4
+          w-full
+          p-4
+          bg-white
+          rounded-xl
+          shadow-sm
+          transition
+          duration-200
+          hover:-translate-y-0.5
+          hover:shadow-md
         "
       >
+        <div className="flex items-center justify-center w-12 h-12 min-w-12 rounded-full bg-blue-600 mr-4">
+          <span className="text-white text-sm font-bold">
+            {aula.numero}
+          </span>
+        </div>
 
-      <span
-          className="
-            text-white
-            text-sm
-            font-bold
-          "
-        >
-          {aula.numero}
-        </span>
+        <div className="flex-1">
+          <h2 className="text-[17px] font-bold text-slate-800 mb-1">
+            {aula.titulo}
+          </h2>
 
-      </div>
-<div className="flex-1">
-
-        <h2
-          className="
-            text-[17px]
-            font-bold
-            text-slate-800
-            mb-1
-          "
-        >
-          {aula.titulo}
-        </h2>
-
-
-        <p
-          className="
-            text-[13px]
-            leading-[18px]
-            text-slate-500
-          "
-        >
-          {aula.descricao}
-        </p>
-
-      </div>
-
-    </article>
+          <p className="text-[13px] leading-[18px] text-slate-500">
+            {aula.descricao}
+          </p>
+        </div>
+    </a>
   );
 }
 

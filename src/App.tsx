@@ -1,25 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Aulas from "./pages/Aulas"
-import Recomendacao from "./pages/Recomendacao"
-import Estudos from "./pages/Estudos"
-import Acervo from "./pages/Acervo"
-import Desenvolvedor from "./pages/Desenvolvedor"
-function App(){
-  return(
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/aulas" element={<Aulas />} />
-      <Route path="/recomendacao" element={<Recomendacao/>} />
-      <Route path="/estudos" element={<Estudos/>} />
-      <Route path="/acervo" element={<Acervo/>} />
-      <Route path="/desenvolvedor" element={<Desenvolvedor/>}/>
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Home from './pages/Home';
+import Aulas from './pages/Aulas';
+import Desenvolvedor from './pages/Desenvolvedor';
+import AulaFundamentosReact from './pages/AulaFundamentosReact';
+import AulaComponentesJSX from './pages/AulaComponentesJSX';
+import AulaEstadosProps from './pages/AulaEstadosProps';
+import AulaListasKeys from './pages/AulaListasKeys';
+import AulaRenderizacaoCondicional from './pages/AulaRenderizacaoCondicional';
 
-    </Routes>
-  
-  </BrowserRouter>
-  )
-  
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aulas" element={<Aulas />} />
+        <Route path="/desenvolvedor" element={<Desenvolvedor />} />
+      
+      
+        // Rotas das aulas
+        <Route path="/aula/fundamentos" element={<AulaFundamentosReact />} />
+        <Route path="/aula/componentes" element={<AulaComponentesJSX />} />
+        <Route path="/aula/estados-props" element={<AulaEstadosProps />} />
+        <Route path="/aula/listas-keys" element={<AulaListasKeys />} />
+        <Route path="/aula/renderizacao-condicional" element={<AulaRenderizacaoCondicional />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-export default App
+  
+export default App;
