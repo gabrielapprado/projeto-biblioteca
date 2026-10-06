@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 function Estudos(){
 
-    const [segundos, setSegundos] = useState(60)
+    const [segundos, setSegundos] = useState(1500)
     const [active, setActive] = useState(false)
     const [descanso, setDescanso] = useState(false)
     const [pause, setPause] = useState(false)
@@ -17,7 +18,7 @@ function Estudos(){
 
                     if (descanso) {
                         setDescanso(false)
-                        return 60
+                        return 1500
                     } else {
                         setDescanso(true)
                         return 300
@@ -43,6 +44,14 @@ function Estudos(){
           pb-8
         "
       >
+         <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-[#94A3B8] hover:text-white 
+                            text-sm font-medium mb-5 transition-colors duration-200"
+                >
+                <span className="text-lg">←</span>
+                Voltar
+        </Link>
 
         <h1
           className="
