@@ -7,6 +7,7 @@ import AulaComponentesJSX from './pages/AulaComponentesJSX';
 import AulaEstadosProps from './pages/AulaEstadosProps';
 import AulaListasKeys from './pages/AulaListasKeys';
 import AulaRenderizacaoCondicional from './pages/AulaRenderizacaoCondicional';
+import Estudos from './pages/Estudos';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aulas" element={<Aulas />} />
         <Route path="/desenvolvedor" element={<Desenvolvedor />} />
+        <Route path='/estudos' element={<Estudos />} />
       
       
         // Rotas das aulas
